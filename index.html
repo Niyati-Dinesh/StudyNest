@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>StudyNest | Welcome</title>
+  <meta name="theme-color" content="#FF6F61">
+  <link rel="icon" type="image/jpeg" href="pictures\icon_v2.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="http://localhost/studynest/style.css" rel="stylesheet">
+
+  <style>
+    
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .welcome {
+      letter-spacing:1px;
+      text-align: center;
+      font-size: 32px;
+      color: #190019;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ffffff;
+      width: 0;
+      animation: typing 3s steps(22) forwards, blink 0.6s step-end infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 22ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .subtitle {
+      letter-spacing:1px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadein 2s ease 3s forwards;
+    }
+
+    @keyframes fadein {
+      to { opacity: 1; }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      width: 150px;
+      padding: 10px 0;
+      text-align: center;
+      background-color: #fbe4d8ce;
+      color: #2B124C;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 10px;
+      cursor: pointer;
+      border: 2px solid #fbe4d8ce;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #DFB6B2;
+      transform: scale(1.05);
+      background-color: #DFB6B2;
+    }
+
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      .welcome {
+        font-size: 24px;
+        width: 0;
+        animation: typing 2.5s steps(22) forwards, blink 0.6s step-end infinite;
+      }
+
+      .nav-btn {
+        width: 80%;
+      }
+
+      .subtitle p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h1 class="welcome">Welcome To StudyNest</h1>
+
+    <div class="subtitle">
+      <p>Your cozy place for organized learning 🌱</p>
+      <br>
+      <img src="pictures\studying.gif" height="150px" width="250px">
+      <br>
+
+      <nav>
+        <a href="http://localhost/studynest/login.html" class="nav-btn" target="_blank">LOGIN</a>
+        <a href="http://localhost/studynest/signup.html" class="nav-btn" target="_blank">SIGNUP</a>
+      </nav>
+    </div>
+  </div>
+
+  <footer>
+    <p>Created with &lt;3 by Niyati</p>
+  </footer>
+  
+</body>
+</html>

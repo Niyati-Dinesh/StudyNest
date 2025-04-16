@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      letter-spacing:1px;
+    }
+
+    body {
+
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(#3A345B, #71557A, #D183A9, #71557A, #4B1535);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex:1;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+        background: #3A345B;
+        backdrop-filter: blur(10px);
+        color: #fbe4d8ce;
+        margin: 0 auto;
+        display: flex;
+        align-items: center; 
+        gap:1rem;
+        width: 100%;
+        padding: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      
+      .logo {
+        height: 80px;
+        width:85px;
+        border-radius: 16px;
+        object-fit: cover; 
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        
+      }
+      .navbar{
+        box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.1);
+        color: #fbe4d8ce;
+        height:45px;
+        padding:2px;
+        padding-top:2px;
+        text-align:center;
+      }
+      .nav2{
+        display:flex;
+        flex:1;
+        flex-direction:row;
+        align-items:right;
+        justify-content:right;
+      }
+
+      .navbar img{
+        border-radius:16px;
+        object-fit: cover;
+      }
+      button:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      }
+      
+
+    div {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      width: 90%;
+      margin: 0 auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .welcome .subject {
+      
+      display: flex;
+      justify-content: center;
+      height:80px;
+      padding:10px;
+    }
+
+    .welcome .subject h2 {
+      animation: typing 3s steps(38) forwards, blink 0.6s step-end infinite;
+      font-size:32px;
+      width: 0;
+      white-space: nowrap;
+      border-right: 2px solid white;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 38ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .add {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeInSide 1.5s ease-in;
+    }
+    @keyframes fadeInSide{
+        from{
+            transform:translateX(30px);
+            opacity:0;
+        }
+        to{
+            transform:translateX(0);
+            opacity:1;
+        }
+    }
+
+    button {
+      background: rgba(255, 255, 255, 0.154);
+      backdrop-filter: blur(18px);
+      border: 0;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.03);
+      font-weight: bold;
+      color: rgb(98, 98, 98);
+      transition: background 0.6s ease-in-out;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: scale(1.05);
+    }
+
+    .overview {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      padding: 10px;
+      animation: fadeInUp 1.5s ease-in;
+    }
+    @keyframes fadeInUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    .item {
+      height: 50px;
+      width: 160px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 10px;
+    margin: 5px;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.08);
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      color: #fbe4d8ce;
+      text-align: center;
+      padding: 15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+      }
+      h2 {
+        font-size: clamp(1.2rem, 1.5vw + 0.8rem, 2.2rem);
+      }
+
+      
+      .darktheme {
+        background: linear-gradient(#11212d, #253745, #4a5c6a,#11212d);
+      }
+      
+      .darktheme header {
+        background: #11212d;
+        color: #ccd0cf;
+      }
+      
+      .darktheme footer {
+        color: #ccd0cf;
+      }
+      
+      .darktheme button {
+        color: #ccd0cf;
+        background: rgba(255, 255, 255, 0.1); /* Optional, to style the button */
+      }
+      .darktheme nav button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      

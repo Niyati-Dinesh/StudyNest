@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StudyNest | SignUp</title>
+  <link rel="icon" type="image/jpeg" href="http://localhost/studynest/pictures/icon_v2.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="http://localhost/studynest/style.css" rel="stylesheet">
+
+  <style>
+    body {
+      letter-spacing:1px;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf0;
+    }
+
+    h2 {
+      text-align: center;
+      text-shadow: 2px 2px 8px rgb(100, 99, 100);
+      margin-top: 40px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background: linear-gradient(#FBE4D8, #DFB6B2, #E6A8E8);
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    input {
+      border-radius: 6px;
+      border: 1px solid #fbe4d8ce;
+      padding: 8px;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th {
+      text-align: left;
+      padding-bottom: 10px;
+    }
+
+    button {
+      width: 150px;
+      padding: 10px 0;
+      text-align: center;
+      background-color: #fbe4d8ce;
+      color: #2B124C;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 10px auto;
+      cursor: pointer;
+      border: 2px solid #fbe4d8ce;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.3s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      
+    }
+
+    footer {
+      
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    footer p {
+      color:#fbe4d8ce;
+      font-size: 14px;
+    }
+
+    footer a button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Create your StudyNest account 🌿</h2>
+
+  <div class="form-container">
+  <form action="http://localhost/studynest/signup_handler.php" method="POST" onsubmit="return check()">
+
+      <table>
+        <tr>
+          <th>Username:</th>
+          <th><input type="text" name="username" placeholder="Enter a cool-ass username" id="uname" required></th>
+        </tr>
+
+        <tr>
+          <th>Email:</th>
+          <th><input type="email" name="email" placeholder="Enter email" id="emay" required></th>
+        </tr>
+
+        <tr>
+          <th>Password:</th>
+          <th><input type="password" name="pwd" placeholder="Enter a password" id="p1" required></th>
+        </tr>
+
+        <tr>
+          <th></th>
+          <th><input type="password" name="pwd1" placeholder="Retype Password" id="p2" required ></th>
+        </tr>
+
+        <tr>
+          <th colspan="2" style="text-align: center;"><button type="submit">SIGNUP</button></th>
+        </tr>
+      </table>
+    </form>
+   
+  </div>
+
+  <footer>
+    <p>
+      Already have an account?
+      <a href="http://localhost/studynest/login.html" target="_blank">
+        <button>LOGIN</button>
+
+      </a></p>
+      <p color="#2B124C">Let's grow your productivity today 🌸</p>
+   
+  </footer>
+</body>
+<script>
+    function check(){
+      var pass1=document.getElementById("p1").value;
+      var pass2=document.getElementById("p2").value;
+      if (pass1===pass2){
+          return true;
+      }
+      else{
+        alert("Passwords do not match!");
+        return false;
+      }
+    }
+  </script>
+</html>
