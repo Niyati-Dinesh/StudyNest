@@ -85,15 +85,14 @@ $username = $_SESSION['username'];?>
 </head>
 
 <body>
-  <header>
-    <img src="pictures/icon_v2" height="80px" width="80px" class="logo">
-    <h1>StudyNest🌱</h1>
+<header>
+    <a href="dashboard.php"><img src="pictures/icon_v2.jpeg" height="80px" width="80px" class="logo"></a><h1>StudyNest🌱</h1>
     <nav class="nav2">
-      <a href="#"><button class="navbar" id="s"><img src="pictures\subjects.jpeg" alt="subject" height="30px" width="30px"> SUBJECTS</button></a>
-      <a href="#"><button class="navbar" id="t"><img src="pictures\tasks.jpeg" alt="tasks" height="30px" width="30px"> TASKS</button></a>
-      <a href="#"><button class="navbar" id="pl"><img src="pictures\planner.jpeg" alt="planner" height="30px" width="30px"> PLANNER</button></a>
-      <a href="#"><button class="navbar" id="pr"><img src="pictures\profile.jpeg" alt="Profile" height="30px" width="30px"> PROFILE</button></a>
-      <a href="#"><button onclick="changeTheme()" class="navbar" id="theme" style="border-radius:16px; height:30px;"><img src="pictures\lightdark.jpeg" alt="theme" height="30px" width="30px"> </button></a>
+    <a href="#"><button class="navbar" id="s" onclick="window.location.href='showsub.php'" ><img src="pictures/subjects.jpeg" alt="subject" height=30px" width="30px" > SUBJECTS</button></a>
+    <a href="#"><button class="navbar" id="t" onclick="window.location.href='showtasks.php'"><img src="pictures/tasks.jpeg" alt="tasks" height="30px" width="30px"> TASKS</button></a>
+    <a href="#"><button class="navbar" id="pl"><img src="pictures/planner.jpeg" alt="planner" height=30px" width="30px"> PLANNER</button></a>
+    <a href="#"><button class="navbar" id="pr" onclick="window.location.href='profile.php'"><img src="pictures/pfp.jpeg" alt="Profile" height="30px" width="30px"> PROFILE</button></a>
+    <a href="#"><button onclick="changeTheme()" class="navbar" id="theme" style="border-radius:16px; height:30px;"><img src="pictures/lightdark.gif" alt="theme" height="30px" width="30px"> </button></a>
     </nav>
   </header>
 <br>

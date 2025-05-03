@@ -116,7 +116,8 @@
     <div class="subtitle">
       <p>Your cozy place for organized learning 🌱</p>
       <br>
-      <img src="pictures\studying.gif" height="150px" width="250px">
+      <img src="pictures/studying.gif" alt="cutie gif"
+      height="150px" width="250px">
       <br>
 
       <nav>
@@ -129,6 +130,23 @@
   <footer>
     <p>Created with &lt;3 by Niyati</p>
   </footer>
-  
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('logout') === '1') {
+        Swal.fire({
+          title: 'Logged Out!',
+          text: "You’ve been logged out successfully, see you soon 💕",
+          icon: 'success',
+          confirmButtonText: 'Okay!'
+        });
+        // Remove query after showing
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    </script>
+    
+
+
 </body>
 </html>

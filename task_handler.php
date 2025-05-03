@@ -26,10 +26,10 @@ $query = "CREATE TABLE IF NOT EXISTS users_tasks (
     task VARCHAR(50),
     subject VARCHAR(25),
     description TEXT DEFAULT NULL,
-    deadline DATE DEFAULT NULL,
+    deadline DATE DEFAULT '0000-00-00',
     status ENUM('pending','complete') DEFAULT 'pending',
     FOREIGN KEY (uname, subject) REFERENCES users_subjects(uname, subject) ON DELETE CASCADE
-)";
+) AUTO_INCREMENT=1";
 mysqli_query($connection, $query);
 
 // Handle form submission

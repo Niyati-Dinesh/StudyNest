@@ -46,7 +46,7 @@ if (isset($_POST['subject'])) {
         $insertQuery = "INSERT INTO users_subjects VALUES('$username', '$subject')";
         mysqli_query($connection, $insertQuery);
         echo "<script>alert('Subject added!'); window.location.href = 'addsub.php'</script>";
-        header("Location: dashboard.php");
+        header("Location: addsub.php");
         exit();
     } else {
         echo "<script>alert('Subject already exists!'); window.location.href = 'addsub.php';</script>";

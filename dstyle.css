@@ -225,3 +225,10 @@
         background: rgba(255, 255, 255, 0.2);
       }
       
+  #girlcat{
+        border-radius: 16px;
+        object-fit: cover; 
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        
+    
+  }

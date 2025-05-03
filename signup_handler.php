@@ -41,6 +41,31 @@ if (isset($_POST['username'])&&isset($_POST['pwd'])&&isset($_POST['email'])){
         $query = "INSERT INTO users (uname, email, pwd) VALUES ('$username', '$email', '$hashed')";
         mysqli_query($connection,$query);
         $_SESSION['username']=$username;
+        
+
+        //creates users_subjects table;
+        $query = "
+            CREATE TABLE IF NOT EXISTS users_subjects (
+                uname VARCHAR(50),
+                subject VARCHAR(25),
+                PRIMARY KEY (uname, subject),
+                FOREIGN KEY (uname) REFERENCES users(uname) ON DELETE CASCADE
+            )";
+        mysqli_query($connection, $query);
+
+        //create users_tasks table
+        $query = "CREATE TABLE IF NOT EXISTS users_tasks (
+            tid INT AUTO_INCREMENT PRIMARY KEY,
+            uname VARCHAR(50),
+            task VARCHAR(50),
+            subject VARCHAR(25),
+            description TEXT DEFAULT NULL,
+            deadline DATE DEFAULT '0000-00-00',
+            status ENUM('pending','complete') DEFAULT 'pending',
+            FOREIGN KEY (uname, subject) REFERENCES users_subjects(uname, subject) ON DELETE CASCADE
+        ) AUTO_INCREMENT=1";
+        mysqli_query($connection, $query);
+
         header("Location:http://localhost/studynest/dashboard.php?user=".urlencode($username));
         exit();
 

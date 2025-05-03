@@ -1,110 +1,86 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['username'])) {
     header("Location: login.html");
     exit();
 }
-
 $username = $_SESSION['username'];
-
-$server = 'localhost';
-$sqluser = 'root';
-$sqlpwd = '';
-$sqldb = 'snest';
-$connection = mysqli_connect($server, $sqluser, $sqlpwd, $sqldb);
-
-if (!$connection) {
-    die("Failed to connect: " . mysqli_connect_error());
-}
-
-$query = "SELECT * FROM users_tasks WHERE uname = '$username' ORDER BY deadline ASC";
-$result = mysqli_query($connection, $query);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StudyNest | Your Tasks</title>
+  <title>StudyNest | Tasks</title>
+  <link rel="icon" type="image/jpeg" href="pictures\icon_v2.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link href="dstyle.css" rel="stylesheet">
+  <script src="dscript.js" defer></script>
   <style>
-    .task-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 20px;
-      margin-top: 100px;
+    #tasks {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
     }
-
-    .task-card {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(14px);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .task-card:hover {
-      transform: scale(1.02);
-    }
-
-    .task-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .task-subject {
-      color: #444;
-      font-size: 0.95rem;
-    }
-
-    .task-desc {
-      margin: 10px 0;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .deadline {
-      font-style: italic;
-      color: #8a2be2;
-    }
-
-    .status {
-      font-weight: bold;
-      color: green;
-    }
-
-    .pending {
-      color: darkorange;
-    }
-
   </style>
 </head>
+
 <body>
-
 <header>
-  <h1>🌱 Your Tasks, Baby</h1>
-</header>
+    <a href="dashboard.php"><img src="pictures/icon_v2.jpeg" height="80px" width="80px" class="logo"></a><h1>StudyNest🌱</h1>
+    <nav class="nav2">
+    <a href="#"><button class="navbar" id="s" onclick="window.location.href='showsub.php'" ><img src="pictures/subjects.jpeg" alt="subject" height=30px" width="30px" > SUBJECTS</button></a>
+    <a href="#"><button class="navbar" id="t" onclick="window.location.href='showtasks.php'"><img src="pictures/tasks.jpeg" alt="tasks" height="30px" width="30px"> TASKS</button></a>
+    <a href="#"><button class="navbar" id="pl"><img src="pictures/planner.jpeg" alt="planner" height=30px" width="30px"> PLANNER</button></a>
+    <a href="#"><button class="navbar" id="pr" onclick="window.location.href='profile.php'"><img src="pictures/pfp.jpeg" alt="Profile" height="30px" width="30px"> PROFILE</button></a>
+    <a href="#"><button onclick="changeTheme()" class="navbar" id="theme" style="border-radius:16px; height:30px;"><img src="pictures/lightdark.gif" alt="theme" height="30px" width="30px"> </button></a>
+    </nav>
+  </header>
 
-<div class="task-container">
-  <?php
-    if (mysqli_num_rows($result) > 0) {
-        while ($task = mysqli_fetch_assoc($result)) {
-            echo "<div class='task-card'>";
-            echo "<div class='task-title'>" . htmlspecialchars($task['task']) . "</div>";
-            echo "<div class='task-subject'>📘 " . htmlspecialchars($task['subject']) . "</div>";
-            echo "<div class='task-desc'>" . nl2br(htmlspecialchars($task['description'])) . "</div>";
-            echo "<div class='deadline'>🗓️ Due: " . $task['deadline'] . "</div>";
-            echo "<div class='status " . ($task['status'] == 'pending' ? 'pending' : '') . "'>Status: " . ucfirst($task['status']) . "</div>";
-            echo "</div>";
+  <div id="tasks">
+    <?php
+    $server = 'localhost';
+    $sqluser = 'root';
+    $sqlpwd = '';
+    $sqldb = 'snest';
+
+    $connection = mysqli_connect($server, $sqluser, $sqlpwd, $sqldb);
+
+    if (!$connection) {
+        die("Failed to connect: " . mysqli_connect_error());
+    }
+
+    // Query to fetch tasks
+    $query = "SELECT tid, task, subject, description, deadline, status FROM users_tasks WHERE uname = '$username'";
+    $resultset = mysqli_query($connection, $query);
+
+    if (mysqli_num_rows($resultset) > 0) {
+        while ($task = mysqli_fetch_assoc($resultset)) {
+            // Define checkbox checked status based on task completion
+            $checked = ($task['status'] == 'complete') ? 'checked' : '';
+            echo "<div id='{$task['tid']}'>
+                    <form>
+                        <input type='checkbox' name='tasks' value='{$task['tid']}' $checked onchange='complete_task({$task['tid']})'> {$task['task']} ({$task['deadline']})<br>
+                        <p>SUBJECT: {$task['subject']}<br>
+                        DESCRIPTION: {$task['description']}<br><br></p>
+                    </form>
+                  </div>";
+          
         }
     } else {
-        echo "<p style='text-align:center;'>You haven’t added any tasks yet, cutie 🥺</p>";
+        echo "<h1>All Tasks Completed! Yay!</h1>";
     }
-  ?>
-</div>
+    ?>
+  </div>
+
+  <footer>
+    <p>Created with &lt;3 by Niyati</p>
+  </footer>
+
 
 </body>
 </html>
