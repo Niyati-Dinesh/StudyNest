@@ -1,3 +1,4 @@
+
 <!--Adds the subject passed through POST method from addsub.php to users_subject table
 users_subject table contains uname(references=users) and subject which forms a composite primary key-->
 
@@ -56,4 +57,3 @@ if (isset($_POST['subject'])) {
     echo "<script>alert('Please enter a subject!'); window.location.href = 'addsub.php';</script>";
     exit();
 }
-?>
