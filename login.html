@@ -1,15 +1,27 @@
+<!--Redirected from index.html , used to logIn to the application-->>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Character encoding and title for the webpage -->
   <meta charset="UTF-8">
   <title>StudyNest | LogIn</title>
+
+  <!-- Favicon for the page -->
   <link rel="icon" type="image/jpeg" href="http://localhost/studynest/pictures/icon_v2.jpeg">
+
+  <!-- Responsive design meta tag for mobile compatibility -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Linking Google Fonts (Poppins) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Linking external CSS stylesheet for custom styles -->
   <link href="http://localhost/studynest/style.css" rel="stylesheet">
 
   <style>
-  body {
+    /* General body styling */
+    body {
       letter-spacing:1px;
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -17,12 +29,14 @@
       background-color: #fffaf0;
     }
 
+    /* Styling for the heading */
     h2 {
       text-align: center;
       text-shadow: 2px 2px 8px rgb(100, 99, 100);
       margin-top: 40px;
     }
 
+    /* Form container styling */
     .form-container {
       display: flex;
       flex-direction: column;
@@ -37,6 +51,7 @@
       border-radius: 10px;
     }
 
+    /* Input field styling */
     input {
       border-radius: 6px;
       border: 1px solid #fbe4d8ce;
@@ -44,6 +59,7 @@
       width: 100%;
     }
 
+    /* Table styling for the login form */
     table {
       width: 100%;
     }
@@ -53,6 +69,7 @@
       padding-bottom: 10px;
     }
 
+    /* Button styling */
     button {
       width: 150px;
       padding: 10px 0;
@@ -69,13 +86,13 @@
       font-weight: bold;
     }
 
+    /* Hover effect for the button */
     button:hover {
       transform: scale(1.05);
-      
     }
 
+    /* Footer styling */
     footer {
-      
       text-align: center;
       margin-top: 30px;
       margin-bottom: 40px;
@@ -86,48 +103,54 @@
       font-size: 14px;
     }
 
+    /* Styling for the signup button in footer */
     footer a button {
       margin-left: 10px;
     }
-    </style>
+  </style>
 </head>
 
 <body>
+  <!-- Welcome heading -->
   <h2>Welcome back to StudyNest 🌿</h2>
 
+  <!-- Form container for login -->
   <div class="form-container">
+    <!-- Login form that posts data to login_handler.php -->
     <form action="http://localhost/studynest/login_handler.php" method="POST">
-    <table>
+      <table>
+        <!-- Username input field -->
         <tr>
           <th>Username:</th>
           <th><input type="text" name="username" placeholder="Enter your username" id="uname" required></th>
         </tr>
 
+        <!-- Password input field -->
         <tr>
           <th>Password:</th>
           <th><input type="password" name="pwd" placeholder="Enter password" id="p1" required></th>
         </tr>
+
+        <!-- Submit button to login -->
         <tr>
-          <th colspan="2" style="text-align: center;"><button type="submit">LOGIN</button></th>
+          <th colspan="2" style="text-align: center;">
+            <button type="submit">LOGIN</button>
+          </th>
         </tr>
-        </table>
+      </table>
     </form>
-   
   </div>
 
+  <!-- Footer section with signup link -->
   <footer>
     <p>
       Don't have an account?
+      <!-- Signup button that redirects to the signup page -->
       <a href="http://localhost/studynest/signup.html" target="_blank">
         <button>SIGNUP</button>
-
       </a>
       <p color="#2B124C">Let's grow your productivity today 🌸</p>
     </p>
   </footer>
-
-
-
-
 </body>
 </html>

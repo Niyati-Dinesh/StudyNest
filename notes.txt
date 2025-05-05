@@ -1,3 +1,99 @@
 fix the alert boxes that comes without any screen
 fix the users_tasks tables tid to start from 0 if table is empty
 
+background: linear-gradient(#4c3d19, #354024, #889063, #cfbb99, #8a7d4c);
+background: linear-gradient( #8e98a1, #d4cbc7, #efdcc3, #d4cbc7,#ba908b);
+
+winner-background: linear-gradient( #483434,#6b4f4f,#eed6c4,#3a3d3a);
+
+.darktheme {
+        background: linear-gradient(#11212d, #253745, #4a5c6a,#11212d);
+      }
+      
+      .darktheme header {
+        background: #11212d;
+        color: #ccd0cf;
+      }
+      
+      .darktheme footer {
+        color: #ccd0cf;
+      }
+      
+      .darktheme button {
+        color: #ccd0cf;
+        background: rgba(255, 255, 255, 0.1); /* Optional, to style the button */
+      }
+      .darktheme nav button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      #D183A9
+      background: linear-gradient(#3A345B, #71557A, #D183A9, #71557A, #4B1535);
+
+      html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* makes the body stretch to full viewport */
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .subject {
+    flex: 1;
+    margin-top: 120px; /* to push content below fixed header */
+    padding: 20px;
+  }
+
+  
+  form {
+    display: inline-flex; 
+    flex-direction: column;
+    align-items: center; /* Center all the form elements horizontally */
+  }
+    input,textarea,select{
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(18px);
+        border: 0;
+        padding: 10px 15px;
+        border-radius: 10px;
+        box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.03);
+        font-weight: bold;
+        color: rgba(9, 1, 1, 0.44);
+        transition: background 0.6s ease-in-out;
+        cursor: pointer;
+    }
+    .buttondiv{
+      background-color:transparent;
+      border:none;
+      display:flex;
+      flex-direction:row;
+      gap:1rem;
+      align-items:center;
+      justify-content:center;
+    }
+    footer {
+  background: transparent; /* or a soft color like rgba(0,0,0,0.05) */
+  backdrop-filter: none;
+  box-shadow: none;
+  color: #000; /* or whatever suits your theme */
+  text-align: center;
+  padding: 20px;
+}
+
+  </style>

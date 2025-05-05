@@ -1,26 +1,47 @@
-StudyNest | Personal Productivity Dashboard
-Welcome to StudyNest! 🌱
+# StudyNest
 
-StudyNest is a minimalist productivity tool designed to help students and professionals stay organized, track progress, and boost efficiency. With a simple yet effective user interface, StudyNest provides a suite of features to help manage tasks, track deadlines, and organize your study or work schedule.
+## Description
+StudyNest is a productivity tool designed to help students manage their academic tasks effectively. The app includes a dashboard with a login system, task management by subject, deadline tracking, and a journal section. Users can track their goals, deadlines, and daily progress through journal entries, helping them stay organized and on top of their academic commitments. The journal section features two types of journals: **NORMAL** and **LEETCODE**, the latter allowing you to track your Leetcode journey. Additionally, a **light/dark color theme** is an optional feature to customize the app’s look and feel.
 
-Features:
-Sign Up / Log In System: Secure user authentication to manage individual accounts.
+StudyNest is built using modern web technologies like HTML, CSS, JavaScript, AJAX, PHP, and MySQL, making it highly interactive, efficient, and user-friendly.
 
-Task Management: Add, edit, and track tasks with deadlines and progress.
+## Features
+- **User Authentication**: Secure login and signup system.
+- **Task Management**: Create and manage tasks by subject.
+- **Deadline Tracker**: Track task deadlines.
+- **Journal**: Jot down your daily progress and moods.
+- **Reflect**: Look back at any day’s entries.
+- **Light/Dark Color Theme**: An optional feature to change the theme based on user preferences.
 
-Dynamic Dashboard: Personalized welcome and task overview with progress tracking and productivity insights.
+---
 
-Notes Section: Quickly jot down important notes and ideas.
+## SETUP USING WAMP
 
-Mood-Based Theme: Tailor the dashboard’s theme to your mood, whether you need calming or motivational vibes.
+### Prerequisites
+Make sure you have the following software installed:
+1. **WAMP Server** (or **XAMPP** if you prefer)
+2. **Git**
 
-Calendar Integration: Keep track of important dates with an interactive calendar.
+### Clone the Repository:
+```bash
+git clone https://github.com/your-username/studynest.git
+cd studynest
 
-Responsive Design: Optimized for desktop, tablet, and mobile devices.
+Set up WAMP:
 
-Technologies Used:
-Frontend: HTML, CSS, JavaScript (with AJAX)
+Install WAMP on your machine if you haven’t already:
 
-Backend: PHP
+1. Download WAMP Server
 
-Database: MySQL
+2. Open WAMP and ensure Apache and MySQL services are running (the WAMP icon in the taskbar should be green).
+
+3. Copy the entire studynest folder into the www directory of your WAMP installation. This is typically located at:
+C:\wamp64\www
+
+4. In your browser, paste the following URL to open the app:
+http://localhost/studynest/index.html
+
+###Start Using StudyNest:
+Visit the index page, log in, or sign up for an account.
+
+Once logged in, you can start adding subjects, tasks, journaling, and more!

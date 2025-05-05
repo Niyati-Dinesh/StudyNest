@@ -2,18 +2,22 @@
 <html lang="en">
 
 <head>
-
+  <!-- Character encoding for proper text display -->
   <meta charset="UTF-8">
   <title>StudyNest | Welcome</title>
+  <!-- Theme color for mobile browsers -->
   <meta name="theme-color" content="#FF6F61">
+  <!-- Favicon for the website -->
   <link rel="icon" type="image/jpeg" href="pictures\icon_v2.jpeg">
+  <!-- Ensuring responsiveness on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to Google Fonts for Poppins font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- Link to external stylesheet -->
   <link href="http://localhost/studynest/style.css" rel="stylesheet">
 
   <style>
-    
-
+    /* Content section, centered with padding */
     .content {
       flex: 1;
       display: flex;
@@ -22,8 +26,9 @@
       padding: 20px;
     }
 
+    /* Welcome message with typing animation */
     .welcome {
-      letter-spacing:1px;
+      letter-spacing: 1px;
       text-align: center;
       font-size: 32px;
       color: #190019;
@@ -35,27 +40,32 @@
       margin: 20px auto;
     }
 
+    /* Typing animation keyframes */
     @keyframes typing {
       from { width: 0 }
       to { width: 22ch }
     }
 
+    /* Cursor blinking animation */
     @keyframes blink {
       50% { border-color: transparent }
     }
 
+    /* Subtitle styling and fade-in animation */
     .subtitle {
-      letter-spacing:1px;
+      letter-spacing: 1px;
       text-align: center;
       font-weight: bold;
       opacity: 0;
       animation: fadein 2s ease 3s forwards;
     }
 
+    /* Fade-in effect keyframe */
     @keyframes fadein {
       to { opacity: 1; }
     }
 
+    /* Navigation button layout */
     nav {
       display: flex;
       flex-direction: column;
@@ -63,6 +73,7 @@
       margin-top: 20px;
     }
 
+    /* Style for navigation buttons */
     .nav-btn {
       display: inline-block;
       width: 150px;
@@ -79,18 +90,19 @@
       transition: 0.3s ease;
     }
 
+    /* Hover effect for navigation buttons */
     .nav-btn:hover {
       background-color: #DFB6B2;
       transform: scale(1.05);
-      background-color: #DFB6B2;
     }
 
-
+    /* Image styling */
     img {
       max-width: 100%;
       height: auto;
     }
 
+    /* Media query for smaller screens */
     @media screen and (max-width: 600px) {
       .welcome {
         font-size: 24px;
@@ -98,10 +110,12 @@
         animation: typing 2.5s steps(22) forwards, blink 0.6s step-end infinite;
       }
 
+      /* Button size adjustment for smaller screens */
       .nav-btn {
         width: 80%;
       }
 
+      /* Subtitle text size adjustment */
       .subtitle p {
         font-size: 14px;
       }
@@ -111,15 +125,18 @@
 
 <body>
   <div class="content">
+    <!-- Welcome message -->
     <h1 class="welcome">Welcome To StudyNest</h1>
 
+    <!-- Subtitle with fade-in effect -->
     <div class="subtitle">
       <p>Your cozy place for organized learning 🌱</p>
       <br>
-      <img src="pictures/studying.gif" alt="cutie gif"
-      height="150px" width="250px">
+      <!-- Animated GIF -->
+      <img src="pictures/studying.gif" alt="cutie gif" height="150px" width="250px">
       <br>
 
+      <!-- Navigation buttons for login and signup -->
       <nav>
         <a href="http://localhost/studynest/login.html" class="nav-btn" target="_blank">LOGIN</a>
         <a href="http://localhost/studynest/signup.html" class="nav-btn" target="_blank">SIGNUP</a>
@@ -127,26 +144,28 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>Created with &lt;3 by Niyati</p>
   </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('logout') === '1') {
-        Swal.fire({
-          title: 'Logged Out!',
-          text: "You’ve been logged out successfully, see you soon 💕",
-          icon: 'success',
-          confirmButtonText: 'Okay!'
-        });
-        // Remove query after showing
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }
-    </script>
-    
-
-
+  <!-- SweetAlert2 library for popup alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Checking if the 'logout' query parameter is present in the URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('logout') === '1') {
+      // Showing a popup alert using SweetAlert2 if logged out
+      Swal.fire({
+        title: 'Logged Out!',
+        text: "You’ve been logged out successfully, see you soon 💕",
+        icon: 'success',
+        confirmButtonText: 'Okay!'
+      });
+      // Remove query parameter after showing the alert
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script>
 </body>
+
 </html>

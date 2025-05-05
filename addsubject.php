@@ -1,9 +1,5 @@
-
-<!--Adds the subject passed through POST method from addsub.php to users_subject table
-users_subject table contains uname(references=users) and subject which forms a composite primary key-->
-
-
 <?php
+// ==================== Session Initialization ====================
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -13,6 +9,7 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
+// ==================== Database Connection ====================
 $server = 'localhost';
 $sqluser = 'root';
 $sqlpwd = '';
@@ -24,36 +21,41 @@ if (!$connection) {
     die("Failed to connect: " . mysqli_connect_error());
 }
 
-// Create table if not exists
+// ==================== Table Creation ====================
 $query = "
     CREATE TABLE IF NOT EXISTS users_subjects (
         uname VARCHAR(50),
         subject VARCHAR(25),
         PRIMARY KEY (uname, subject),
         FOREIGN KEY (uname) REFERENCES users(uname) ON DELETE CASCADE
-    )";
+    )
+";
 mysqli_query($connection, $query);
 
-// Check if form submitted
+// ==================== Form Submission Handler ====================
 if (isset($_POST['subject'])) {
     $subject = mysqli_real_escape_string($connection, $_POST['subject']);
 
-    // Check for duplicates
+    // Check if the subject already exists for this user
     $checkquery = "SELECT * FROM users_subjects WHERE uname='$username' AND subject='$subject'";
     $result = mysqli_query($connection, $checkquery);
 
     if (mysqli_num_rows($result) === 0) {
-        // Insert new subject
+        // Insert subject if it's new
         $insertQuery = "INSERT INTO users_subjects VALUES('$username', '$subject')";
         mysqli_query($connection, $insertQuery);
-        echo "<script>alert('Subject added!'); window.location.href = 'addsub.php'</script>";
-        header("Location: addsub.php");
+
+        // Redirect with success message
+        header("Location: addsub.php?status=success");
         exit();
     } else {
-        echo "<script>alert('Subject already exists!'); window.location.href = 'addsub.php';</script>";
+        // Redirect with duplicate warning
+        header("Location: addsub.php?status=exists");
         exit();
     }
 } else {
-    echo "<script>alert('Please enter a subject!'); window.location.href = 'addsub.php';</script>";
+    // Redirect if no subject was provided
+    header("Location: addsub.php?status=empty");
     exit();
 }
+?>

@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>StudyNest | SignUp</title>
+  <!-- Favicon for browser tab -->
   <link rel="icon" type="image/jpeg" href="http://localhost/studynest/pictures/icon_v2.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- External CSS file -->
   <link href="http://localhost/studynest/style.css" rel="stylesheet">
 
+  <!-- Inline CSS styling -->
   <style>
     body {
-      letter-spacing:1px;
+      letter-spacing: 1px;
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
@@ -23,6 +28,7 @@
       margin-top: 40px;
     }
 
+    /* Styling the form container */
     .form-container {
       display: flex;
       flex-direction: column;
@@ -56,11 +62,9 @@
     button {
       width: 150px;
       padding: 10px 0;
-      text-align: center;
       background-color: #fbe4d8ce;
       color: #2B124C;
       border-radius: 10px;
-      text-decoration: none;
       margin: 10px auto;
       cursor: pointer;
       border: 2px solid #fbe4d8ce;
@@ -71,18 +75,16 @@
 
     button:hover {
       transform: scale(1.05);
-      
     }
 
     footer {
-      
       text-align: center;
       margin-top: 30px;
       margin-bottom: 40px;
     }
 
     footer p {
-      color:#fbe4d8ce;
+      color: #fbe4d8ce;
       font-size: 14px;
     }
 
@@ -93,62 +95,68 @@
 </head>
 
 <body>
+  <!-- Signup Page Heading -->
   <h2>Create your StudyNest account 🌿</h2>
 
+  <!-- Signup Form -->
   <div class="form-container">
-  <form action="http://localhost/studynest/signup_handler.php" method="POST" onsubmit="return check()">
-
+    <form action="http://localhost/studynest/signup_handler.php" method="POST" onsubmit="return check()">
       <table>
         <tr>
+          <!-- Username input -->
           <th>Username:</th>
           <th><input type="text" name="username" placeholder="Enter a cool-ass username" id="uname" required></th>
         </tr>
 
         <tr>
+          <!-- Email input -->
           <th>Email:</th>
           <th><input type="email" name="email" placeholder="Enter email" id="emay" required></th>
         </tr>
 
         <tr>
+          <!-- Password input -->
           <th>Password:</th>
           <th><input type="password" name="pwd" placeholder="Enter a password" id="p1" required></th>
         </tr>
 
         <tr>
+          <!-- Confirm password input (no name attribute so it doesn’t go to backend) -->
           <th></th>
-          <th><input type="password" name="pwd1" placeholder="Retype Password" id="p2" required ></th>
+          <th><input type="password" placeholder="Retype Password" id="p2" required></th>
         </tr>
 
         <tr>
+          <!-- Submit button -->
           <th colspan="2" style="text-align: center;"><button type="submit">SIGNUP</button></th>
         </tr>
       </table>
     </form>
-   
   </div>
 
+  <!-- Footer section with login redirect -->
   <footer>
     <p>
       Already have an account?
       <a href="http://localhost/studynest/login.html" target="_blank">
         <button>LOGIN</button>
-
-      </a></p>
-      <p color="#2B124C">Let's grow your productivity today 🌸</p>
-   
+      </a>
+    </p>
+    <p style="color:#2B124C;">Let's grow your productivity today 🌸</p>
   </footer>
-</body>
-<script>
-    function check(){
-      var pass1=document.getElementById("p1").value;
-      var pass2=document.getElementById("p2").value;
-      if (pass1===pass2){
-          return true;
-      }
-      else{
+
+  <!-- Password match validation -->
+  <script>
+    function check() {
+      var pass1 = document.getElementById("p1").value;
+      var pass2 = document.getElementById("p2").value;
+      if (pass1 === pass2) {
+        return true;
+      } else {
         alert("Passwords do not match!");
         return false;
       }
     }
   </script>
+</body>
 </html>

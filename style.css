@@ -1,27 +1,39 @@
-/* Import the Poppins font */
+/*Common style sheet for index , login and signup pages*/
+
+/* Import the Poppins font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+/* Apply universal box-sizing and set default font */
 * {
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; /* Apply the font to all elements */
+  font-family: 'Poppins', sans-serif; /* Ensures consistent font usage throughout */
 }
 
+/* Body styling */
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100vh; /* Makes sure body takes full height */
   display: flex;
-  flex-direction: column;
-  font-family: 'Poppins', sans-serif; /* Apply the font to body */
+  flex-direction: column; /* Stack children vertically */
+  font-family: 'Poppins', sans-serif;
+  
+  /* Gradient background for a warm aesthetic vibe */
   background: linear-gradient(#FBE4D8, #DFB6B2, #854F6C, #522B58, #2B124C, #190019);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Footer styling */
 footer {
-  background-color: #2B124C;
-  color: #fbe4d8ce;
+  background-color: #2B124C; /* Dark purple base */
+  color: #fbe4d8ce; /* Soft peachy text color */
   text-align: center;
   padding: 15px;
+
+  /* Rounded top corners for aesthetic polish */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
+  /* Subtle shadow for depth */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
