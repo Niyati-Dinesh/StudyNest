@@ -15,19 +15,20 @@ StudyNest is built using modern web technologies like HTML, CSS, JavaScript, AJA
 
 ---
 
-## SETUP USING WAMP
+## SetUp using WAMP
 
 ### Prerequisites
-Make sure you have the following software installed:
-1. **WAMP Server** (or **XAMPP** if you prefer)
-2. **Git**
+Make sure you have the following software installed:<br>
+1.<a href="https://www.wampserver.com/en/download-wampserver-64bits/"> **WAMP Server** </a>(or **XAMPP** if you prefer)<br>
+2. <a href="https://git-scm.com/downloads">**Git**</a>
 
 ### Clone the Repository:
-```bash
-git clone https://github.com/your-username/studynest.git
-cd studynest
+<pre>
+git clone https://github.com/your-username/StudyNest.git</pre>
+<pre>cd studynest</pre>
 
-Set up WAMP:
+
+<h2>Set up WAMP:</h2>
 
 Install WAMP on your machine if you haven’t already:
 
@@ -36,12 +37,12 @@ Install WAMP on your machine if you haven’t already:
 2. Open WAMP and ensure Apache and MySQL services are running (the WAMP icon in the taskbar should be green).
 
 3. Copy the entire studynest folder into the www directory of your WAMP installation. This is typically located at:
-C:\wamp64\www
+<pre>C:\wamp64\www</pre>
 
 4. In your browser, paste the following URL to open the app:
-http://localhost/studynest/index.html
+<pre>http://localhost/studynest/index.html</pre>
 
-###Start Using StudyNest:
-Visit the index page, log in, or sign up for an account.
+<h2>Start Using StudyNest:</h2>
+<p>Visit the index page, log in, or sign up for an account.
 
-Once logged in, you can start adding subjects, tasks, journaling, and more!
+Once logged in, you can start adding subjects, tasks, journaling, and more!</p>
