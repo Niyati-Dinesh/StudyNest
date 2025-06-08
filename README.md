@@ -43,8 +43,8 @@ Install WAMP on your machine if you haven’t already:
 <pre>http://localhost/studynest/index.html</pre>
 
 <h2>Start Using StudyNest:</h2>
-<p>Visit the index page, log in, or sign up for an account.
-<img src="pictures/Login Page.png">
-Once logged in, you can start adding subjects, tasks, journaling, and more!</p>
-<img src="pictures/Screenshot (17).png">
+<p>Visit the index page, log in, or sign up for an account.<br><br>
+<img src="pictures/Login Page.png" height="270px" width="490px"><br><br>
+Once logged in, you can start adding subjects, tasks, journaling, and more!</p><br><br>
+<img src="pictures/Screenshot (17).png"height="270px" width="490px"><br>
 
