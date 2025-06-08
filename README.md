@@ -1,5 +1,5 @@
 # StudyNest
-<img src="pictures/IMG_9742.jpeg">
+<img src="pictures/">
 ## Description
 StudyNest is a productivity tool designed to help students manage their academic tasks effectively. The app includes a dashboard with a login system, task management by subject, deadline tracking, and a journal section. Users can track their goals, deadlines, and daily progress through journal entries, helping them stay organized and on top of their academic commitments. The journal section features two types of journals: **NORMAL** and **LEETCODE**, the latter allowing you to track your Leetcode journey. Additionally, a **light/dark color theme** is an optional feature to customize the app’s look and feel.
 
